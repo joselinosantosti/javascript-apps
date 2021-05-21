@@ -1,0 +1,15 @@
+.bg-purple {
+	background-color: #9104d8;
+	color: #fff;
+}
+.bg-purple:hover {
+	opacity: 0.9;
+	transition: 0.5s;
+}
+#albuns {
+	cursor: pointer;
+}
+#albuns:hover {
+	box-shadow: 5px 5px 15px #aaa;
+	transition: 0.5s;
+}
