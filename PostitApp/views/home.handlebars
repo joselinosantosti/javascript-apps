@@ -1,0 +1,16 @@
+<div class="container mt-5">
+	<a href="/nova_anotacao" class="btn btn-warning text-white" title=""><i class="fa fa-post"></i> Novo postit</a>
+	<hr>
+	<div class="row pt-2">
+
+		{{#each anotacoes}}
+		<div class="col-md-2 m-2 bg-warning text-white p-2 shadow">
+			<strong>{{dataValues.titulo}}</strong>
+			<hr>
+			{{dataValues.texto}}
+			<hr>
+			<a href="/deletar/{{dataValues.id}}" class="btn btn-danger">Deletar</a>
+		</div>
+		{{/each}}
+	</div>
+</div>
