@@ -1,0 +1,97 @@
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Simulador de investimentos</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+      <link rel="icon" type="text/css" href="moeda.png">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <style type="text/css">
+         .bg-orange {
+         background-color: #f9a02a;
+         color: #7c02d3;
+         }
+
+         .card {
+            max-width: 18rem;
+            color: #fff;
+         }
+      </style>
+   </head>
+
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-orange mb-5">
+         <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img src="moeda.png" width="30" alt="Investimentos">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="investimentos.html">Renda fixa</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link active" href="/main">Aposentadoria</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link active" href="/main">Meu sonho</a>
+                  </li>
+               </ul>
+            </div>
+            <ul class="navbar-nav nav-right">
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">
+                  <i class="fa fa-user"></i></a>
+                  <div class="dropdown-menu">
+                     <a class="dropdown-item" href="/minha_conta">Nome</a>
+                     <a class="dropdown-item" href="/minha_conta">Minha conta</a>
+                     <a class="dropdown-item" href="/sair">Sair</a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
+      <section class="container">
+         <h1>Simulador de Investimentos</h1>
+         <div class="row">
+            <div class="col-sm-4 mb-3">
+               <div class="card bg-orange">
+                  <div class="card-header">
+                     <h2>Renda fixa</h2>
+                  </div>
+                  <div class="card-body">
+                     <p class="card-text">Descubra aqui quando você vai poder parar de trabalhar por obrigação e viver apenas com os rendimentos do seu dinheiro investido.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-4 mb-3">
+               <div class="card bg-orange">
+                  <div class="card-header">
+                     <h2>Meus sonhos</h2>
+                  </div>
+                  <div class="card-body">
+                     <p class="card-text">Descubra aqui quando você vai poder parar de trabalhar por obrigação e viver apenas com os rendimentos do seu dinheiro investido.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-4 mb-3">
+               <div class="card bg-orange">
+                  <div class="card-header">
+                     <h2>Aposentadoria</h2>
+                  </div>
+                  <div class="card-body">
+                     <p class="card-text">Descubra quando você vai se aposentar por que se estiver pagando INSS pode esquecer.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </body>
+</html>

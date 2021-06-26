@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cara ou Coroa</title>
+	<style type="text/css">
+		body {
+			background-color: #61bd8c;
+			text-align: center;
+			padding-top: 15%;
+		}
+		#moeda:hover {
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function jogar() {
+			var num = Math.round(Math.random()*1)
+			var moeda = document.getElementById('moeda')
+			/*if (num == 0) {
+				moeda.src = 'moeda_cara.png'
+			} else {
+				moeda.src = 'moeda_coroa.png'
+			} */
+			//Ternario
+			var moeda = num == 0 ? moeda.src = 'moeda_cara.png': moeda.src = 'moeda_coroa.png'
+
+		}
+		
+	</script>
+</head>
+<body>
+	<img onclick="jogar()" id="moeda" src="moeda_cara.png">
+	<br>
+	<br>
+	<a href="cara_coroa.html"><img src="botao_voltar.png"></a>
+</body>
+</html>

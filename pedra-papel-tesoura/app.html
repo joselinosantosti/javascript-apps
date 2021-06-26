@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <!-- Meta tags Obrigatórias -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      <style type="text/css">
+         .fade-out{
+            opacity: 0;
+            transition: 1s;
+         }
+         .fade-in {
+            opacity: 1;
+            transition: 1s;
+         }
+      </style>
+      <title>Pedra - Papel - Tesoura</title>
+   </head>
+   <body>
+         <div class="container text-center mt-5">
+            <div class="row">
+               <div class="col-sm-12">
+                     <h2 class="pb-5">Escolha do App</h2>
+                     <img id="padrao" src="padrao.png" width="200">
+                     <div class="mb-5"></div>
+
+                     <h2 class="pb-5">Escolha uma das opções abaixo</h2>
+                     <img src="pedra.png" width="100" class="bt m-3" data-id="0">
+                     <img src="papel.png" width="100" class="bt m-3" data-id="1">
+                     <img src="tesoura.png" width="100" class="bt" data-id="2">
+               </div>
+            </div>
+            <script>
+               padrao = document.getElementById("padrao")
+               padrao.setAttribute("src", "padrao.png")
+               //padrao.classList.add("fade-out")
+               //setTimeout(() => padrao.setAttribute("src", img+".png"), 2000)
+
+               document.querySelectorAll(".bt").forEach(btn => {
+                 btn.addEventListener("click", (e) => {
+
+                  //Gerar numero aleatorio
+                  var num = Math.round(Math.random()*2)
+                  
+                  //Variavel img com string de acordo com o numero gerado
+                  console.log(comparaImagem(num))
+
+                  //Imagem vai para a padrao do app
+                  padrao.setAttribute("src", comparaImagem(num)+".png")
+
+                  //Captura o id da imagem clicada
+                  const id = btn.getAttribute("data-id")
+                  
+                  //Verifica quem ganhou
+                  var escolha_user = comparaImagem(id)
+                  console.log(escolha_user)
+
+                  //User ganha (user->pedra e app->tesoura, user->papel e app->pedra, user->tesoura e app->papel)
+                  if (id == num) {
+                     console.log("Empatou! Os dois escolheram "+comparaImagem(num))
+                  } else if (id == 0 && num == 2 || (id == 1 && num == 0) || (id == 2 && num == 1)) {
+                     console.log("Vc ganhou! Vc escolheu "+comparaImagem(id)+" e o app escolheu "+comparaImagem(num))
+                  } else {
+                     console.log("Perdeu :(. Vc escolheu "+comparaImagem(id)+" e o app escolheu "+comparaImagem(num))
+                  }
+                  })
+                })
+
+               function comparaImagem(num) {
+                  var img = ""
+                  
+                  if (num == 0) {
+                     img = "pedra"
+                  } else if (num == 1) {
+                     img = "papel"
+                  } else {
+                     img = "tesoura"
+                  }
+                  return img
+               }
+
+            </script>
+   </body>
+</html>
