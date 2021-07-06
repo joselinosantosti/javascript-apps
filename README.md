@@ -1,8 +1,7 @@
-# Apps Javascript and NodeJS
+# Apps Javascript
 # 1 Cara ou coroa
-# 2 Pedra, papel, tesoura
-# 3 Simulador de investimentos
-# 4 Aprenda Inglês
-# 5 PostIt App
-# 6 Quiz App
-# 7 Blog
+# 2 Game Pedra, papel, tesoura
+# 3 Aprenda Inglês
+# 4 Simulador de investimentos
+# 5 App Minhas finanças OO...
+# 6 Carrinho de compras...
