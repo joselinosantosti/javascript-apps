@@ -8,5 +8,6 @@
 # 4 Calculadora estacionamento
 ![](https://github.com/joselinosantosti/javascript-apps/blob/main/calculadora-estacionamento/estacionamento.png)
 # 5 Simulador de investimentos
+![](https://github.com/joselinosantosti/javascript-apps/blob/main/simulador-investimentos/investimentos.png)
 # 6 App Minhas finanças OO...
 # 7 Carrinho de compras...
