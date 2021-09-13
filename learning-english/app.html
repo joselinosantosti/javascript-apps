@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title>Learning English</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+      <style type="text/css">
+        .brown {
+          background-color: rgb(137, 95, 31);
+        }
+        .bg-img {
+          background-image: url(images/background.jpg);
+        }
+        .bg1 {
+          background-color: #f5e9b9;
+        }
+        .row {
+          padding-bottom: 50px;
+        }
+        img {
+          width: 150px;
+          margin: 10px;
+        }
+        img:hover {
+          transition: 0.5s;
+          cursor: pointer;
+          transform: scale(1.2);
+        }
+        .bg2 {
+          background-color: #f2ebe2;
+        }
+        #word {
+          display: none;
+        }
+      </style>
+   </head>
+   <body>
+         <div class="container text-center mt-5">
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#animals" type="button" role="tab" aria-controls="home" aria-selected="true">Animals</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#numbers" type="button" role="tab" aria-controls="profile" aria-selected="false">Numbers</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#jobs" type="button" role="tab" aria-controls="contact" aria-selected="false">Jobs</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="animals" role="tabpanel" aria-labelledby="animals-tab">
+
+              <div class="row bg1">
+                 <div class="col-sm-12">
+                       <img src="images/cat.png">
+                       <img src="images/dog.png" >
+                       <img src="images/lion.png">
+                       <img src="images/monkey.png">
+                       <img src="images/sheep.png">
+                       <img src="images/cow.png">
+                 </div>
+                 
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="numbers" role="tabpanel" aria-labelledby="numbers-tab">
+              <div class="row bg-img">
+                 <div class="col-sm-12">
+                       <img src="images/one.jpg">
+                       <img src="images/two.jpg">
+                       <img src="images/three.png">
+                       <img src="images/four.png">
+                       <img src="images/five.png">
+                       <img src="images/six.jpg">
+                 </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">
+              <div class="row bg2">
+                 <div class="col-sm-12">
+                       <img src="images/dentist.png" width="150">
+                       <img src="images/actress.png" width="150">
+                       <img src="images/architect.png" width="150">
+                       <img src="images/chef.png" width="150">
+                       <img src="images/computeroperator.png" width="150">
+                       <img src="images/doctor.png" width="150">
+                       <img src="images/engineer.png" width="150">
+                       <img src="images/gardener.png" width="150">
+                       <img src="images/musician.png" width="150">
+                       <img src="images/nanny.png" width="150">
+                       <img src="images/nurse.png" width="150">
+                       <img src="images/recepcionist.png" width="150">
+                       <img src="images/teacher.png" width="150">
+                       <img src="images/touristguide.png" width="150">
+                       <img src="images/travelagent.png" width="150">
+                       <img src="images/waiter.png" width="150">
+          
+                 </div>
+              </div>
+            </div>
+
+             <div id="word" class="col-4 alert alert-danger"></div>
+          </div>
+
+            <script>
+               padrao = document.getElementById("padrao")
+               word = document.getElementById("word")
+   
+               document.querySelectorAll("img").forEach(btn => {
+                 btn.addEventListener("click", (e) => {
+
+                  var path = btn.getAttribute("src")
+                  var img = path.substring(7).replace(".png", "").replace(".jpg", "")
+
+                  //Play sound
+                  var som = "audios/"+img+".mp3"
+
+                  //Show word
+                  word.style.display = "block"
+                  word.innerHTML = img.toUpperCase()
+
+                  //Create element audio player
+                  var audio = document.createElement("audio")
+
+                  audio.src = som
+                  audio.setAttribute("preload", "auto")
+                  audio.setAttribute("controls", "none")
+                  audio.style.display = "none"
+                  audio.play()
+
+                  document.body.appendChild(audio)
+                })
+              })
+            </script>
+   </body>
+</html>

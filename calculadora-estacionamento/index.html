@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parking</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+	<section class="container bg-dark text-light">
+			<h1 class="text-center p-3">INSIRA OS DADOS PARA CALCULAR A TARIFA</h1>
+
+			<form>
+				<div class="row p-4">
+				
+					<div class="col-6">
+						<label class="text-light">Data da entrada</label>
+						<input class="form-control" type="date" id="data-entrada" name="data-entrada" required="">
+						<hr>
+						<label class="text-light">Hora da entrada</label>
+						<input class="form-control" type="time" name="hora-entrada" id="hora-entrada" required="">
+						<hr>
+						<label class="text-light">Tipo de vaga</label>
+						<select class="form-control" id="tipo-vaga" name="tipo-vaga">
+							<option value="">Escolha um tipo</option>
+							<option value="coberta">Coberta</option>
+							<option value="descoberta">Descoberta</option>
+						</select>
+					</div>
+
+					<div class="col-6 mb-3">
+						<label class="text-light">Data da saída</label>
+						<input class="form-control" type="date" id="data-saida" name="data-saida" required="">
+						<hr>
+						<label class="text-light">Hora da saída</label>
+						<input class="form-control" type="time" name="hora-saida" id="hora-saida" required="">
+						<hr>
+						<label class="text-light">Placa</label>
+						<input class="form-control" type="text" name="placa" placeholder="Ex: KRV-9876">
+					</div>
+				
+			</div>
+
+			<div class="container text-center p-4">
+				<button class="btn btn-lg btn-danger" type="button" onclick="calcular()">Calcular</button>
+			</div>
+			</form>
+	</section>
+
+	<section class="container">
+			<div class="row p-3">
+				<h1>TARIFAS</h1>
+				<hr>
+				<div class="col-3">
+					<h3>Vaga coberta</h3>
+					<h3>R$ 20,00</h3>
+				</div>
+				<div class="col-3">
+					<h3>Vaga descoberta</h3>
+					<h3>R$ 10,00</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-6">
+				<h2 id="total-diarias"></h2>
+				</div>
+				<div class="col-6">
+				<h2 id="total-pagar"></h2>
+				</div>
+			</div>
+	</section>
+
+<script>
+	function calcular() {
+		let dataEntrada = document.getElementById('data-entrada').value
+		let dataSaida = document.getElementById('data-saida').value
+
+		let horaEntrada = document.getElementById('hora-entrada').value
+		let horaSaida = document.getElementById('hora-saida').value
+
+		let tipoVaga = document.getElementById('tipo-vaga').value
+		let totalDiarias = document.getElementById('total-diarias')
+		let totalPagar = document.getElementById('total-pagar')
+
+		if (dataEntrada == '' || dataSaida == '' || tipoVaga == '') {
+			alert('Preencha todos os campos')
+		} else {
+
+			//Get 1 day in milliseconds
+			var one_day=1000*60*60*24
+
+			//Convert both dates to milliseconds
+			dataEntrada = new Date(dataEntrada)
+			dataSaida = new Date(dataSaida)
+
+			//Calculate the difference in milliseconds
+			let diferenca = dataSaida.getTime() - dataEntrada.getTime()
+
+			let totalDias = Math.round(diferenca/one_day)+1
+
+			if(totalDias < 0) {
+				alert('A data de entrada deve ser antes da data de saída')
+			} else {
+
+				if(tipoVaga === 'coberta') {
+					total = parseInt(totalDias) * 20
+				} else {
+					total = parseInt(totalDias) * 10
+				}
+				totalDiarias.innerText = 'Total de diárias: '+totalDias
+				totalPagar.innerText = 'Total a pagar: R$ '+total
+			}
+
+		}
+	}
+
+</script>
+</body>
+</html>
